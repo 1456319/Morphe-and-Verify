@@ -526,3 +526,32 @@ androidComponents {
         variant.sources.assets?.addGeneratedSourceDirectory(licensesAssets, LicensesAssetsTask::outputDirectory)
     }
 }
+
+tasks.register("publishToGithub") {
+    group = "publishing"
+    description = "Publishes the assembled APK release to GitHub via gh CLI."
+    doLast {
+        val versionStr = version.toString()
+        val tag = "v$versionStr"
+        val apk = layout.buildDirectory.file("outputs/apk/morphe-manager-$versionStr.apk").get().asFile
+        if (!apk.exists()) {
+            val debugApk = layout.buildDirectory.file("outputs/apk/debug/morphe-manager-$versionStr-debug.apk").get().asFile
+            if (debugApk.exists()) {
+                debugApk.copyTo(apk, overwrite = true)
+            } else {
+                throw GradleException("Could not find APK at ${apk.absolutePath} or ${debugApk.absolutePath}")
+            }
+        }
+        val notesFile = rootProject.file("release-notes.md")
+        val exitCode = ProcessBuilder(
+            "gh", "release", "create", tag, apk.absolutePath,
+            "--repo", "1456319/Morphe-and-Verify",
+            "--title", "$tag - Morphe-and-Verify",
+            "-F", notesFile.absolutePath
+        ).inheritIO().start().waitFor()
+        if (exitCode != 0) {
+            throw GradleException("GitHub release creation failed with exit code $exitCode")
+        }
+    }
+}
+

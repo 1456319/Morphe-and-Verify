@@ -15,7 +15,7 @@ import kotlin.time.Duration.Companion.minutes
 const val tag = "Morphe Manager"
 
 const val SOURCE_NAME = "Morphe Patches"
-const val MANAGER_REPO_URL = "https://github.com/MorpheApp/morphe-manager"
+const val MANAGER_REPO_URL = "https://github.com/1456319/Morphe-and-Verify"
 const val SOURCE_REPO_URL = "https://github.com/MorpheApp/morphe-patches"
 
 /** Key the releases of [SOURCE_REPO_URL] are signed with, see PatchBundleSignature. */
@@ -25,7 +25,7 @@ const val MORPHE_API_URL = "https://api.morphe.software"
 /** Sent on every request to [MORPHE_API_URL]. */
 const val MORPHE_USER_AGENT ="Morphe-Manager/${BuildConfig.VERSION_CODE}"
 const val MORPHE_WEBSITE_URL = "https://morphe.software"
-const val COMMUNITY_PATCHES_URL = "https://morphe-patches.software"
+const val COMMUNITY_PATCHES_URL = "https://github.com/1456319/Morphe-and-Verify#verified-patch-sources"
 const val BLOCKED_SOURCES_URL = "$MORPHE_API_URL/v2/blocked-sources"
 
 /** Website page behind add-source links: ?github|gitlab=owner/repo(&name=...) */
@@ -35,10 +35,10 @@ const val ADD_SOURCE_PATH = "/add-source"
 const val REMOTE_URL_PLACEHOLDER = "github.com/owner/repo"
 
 /** Raw GitHub URL for the stable manager release JSON (main branch) */
-const val MANAGER_RELEASE_JSON_URL = "https://raw.githubusercontent.com/MorpheApp/morphe-manager/refs/heads/main/app-release.json"
+const val MANAGER_RELEASE_JSON_URL = "https://raw.githubusercontent.com/1456319/Morphe-and-Verify/refs/heads/main/app-release.json"
 
 /** Raw GitHub URL for the pre-release manager release JSON (dev branch) */
-const val MANAGER_PRERELEASE_JSON_URL = "https://raw.githubusercontent.com/MorpheApp/morphe-manager/refs/heads/dev/app-release.json"
+const val MANAGER_PRERELEASE_JSON_URL = "https://raw.githubusercontent.com/1456319/Morphe-and-Verify/refs/heads/dev/app-release.json"
 
 /** Controls whether manager updates are fetched directly from JSON files in the repository instead of using the GitHub API */
 const val USE_MANAGER_DIRECT_JSON = true
@@ -53,6 +53,7 @@ object KnownApps {
     const val YOUTUBE       = "com.google.android.youtube"
     const val YOUTUBE_MUSIC = "com.google.android.apps.youtube.music"
     const val REDDIT        = "com.reddit.frontpage"
+    const val MORPHE_MANAGER = "app.morphe.manager"
     // const val X_TWITTER     = "com.twitter.android"
 
     // Shared Morphe brand gradient tail
@@ -84,6 +85,7 @@ object KnownApps {
         Entry(REDDIT,        brandColor = Color(0xFFFF4500)),
         Entry(YOUTUBE,       brandColor = Color(0xFFFF0033)),
         Entry(YOUTUBE_MUSIC, brandColor = Color(0xFFFF0000)),
+        Entry(MORPHE_MANAGER, brandColor = MorpheBrandTeal),
         // Entry(X_TWITTER, brandColor = Color(0xFF000000)),  // Uncomment when release
     )
 
@@ -115,6 +117,7 @@ object KnownApps {
         YOUTUBE       to "YouTube",
         YOUTUBE_MUSIC to "YouTube Music",
         REDDIT        to "Reddit",
+        MORPHE_MANAGER to "Morphe-and-Verify",
     )
 
     /**

@@ -93,6 +93,25 @@ Morphe-and-Verify preserves 100% of the operational capabilities of standard Mor
 
 ---
 
+## Verified Patch Sources
+
+The following patch repositories are compatible with Morphe-and-Verify and can be added directly via **Sources -> (+)**:
+
+| Source | Repository URL | Focus Area | Verification Status |
+| :--- | :--- | :--- | :--- |
+| **Official Morphe Patches** | `github.com/MorpheApp/morphe-patches` | General app patches & ad-blocking | Subjected to 3-pillar verification |
+| **Proteus Patches** | `github.com/ineednotitle/Proteus-Patches` | Extended app features & privacy | Verified with heuristic reporting |
+| **Mobile Stream Patches** | `github.com/semicoloncolonel/mobile-morphe-patches` | Streaming & media patches | Verified with reachability tracing |
+
+To add any source in Morphe-and-Verify:
+1. Tap **Sources** on the bottom navigation bar.
+2. Tap the **+** button.
+3. Paste the repository address (e.g. `github.com/ineednotitle/Proteus-Patches`) and tap **Add**.
+
+---
+
+---
+
 ## License & Attribution
 
 - **Morphe-and-Verify** is licensed under the [GNU General Public License v3.0](LICENSE).

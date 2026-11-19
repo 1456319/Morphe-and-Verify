@@ -1,4 +1,4 @@
-# Morphe-and-Verify 🔍🛡️
+# Morphe-and-Verify
 
 > **Independent Fork Announcement & Non-Association Notice:**  
 > **Morphe-and-Verify** is an independent, community-driven research and hardening fork developed by [@1456319](https://github.com/1456319).  
@@ -6,7 +6,7 @@
 
 ---
 
-## ⚠️ Important User Advisory: Why You Will See More "Failures" and "Warnings"
+## Important User Advisory: Why You Will See More "Failures" and "Warnings"
 
 **Morphe-and-Verify does NOT apply patches less effectively than upstream Morphe. It applies the exact same patches using the exact same Dalvik bytecode mutation toolchain—but reports results TRUTHFULLY.**
 
@@ -14,18 +14,18 @@ In upstream Morphe (and classic ReVanced Manager), "Success" is defined purely a
 $$\text{Status} = \text{Success} \iff \text{The AST visitor executed without throwing an uncaught smali exception}$$
 
 Under upstream's definition:
-- If a universal privacy patch (e.g. *Block analytics & tracking SDKs*) scans 50,000 classes, finds **zero matching markers**, and modifies **zero bytecode instructions**, upstream enthusiastically logs `STATUS_SUCCESS` and shows a solid green checkmark: `[✓] Block analytics & tracking SDKs: Success`.
-- If an AI-removal patch (e.g. *Disable AI*) forces a legacy getter to return `false`, but that method has **zero callers in any UI/ViewModel** and is **bypassed by compound boolean guards in the native app**, upstream reports `[✓] Disable AI: Success`.
+- If a universal privacy patch (e.g. *Block analytics & tracking SDKs*) scans 50,000 classes, finds **zero matching markers**, and modifies **zero bytecode instructions**, upstream enthusiastically logs `STATUS_SUCCESS` and reports: `[Success] Block analytics & tracking SDKs: Success`.
+- If an AI-removal patch (e.g. *Disable AI*) forces a legacy getter to return `false`, but that method has **zero callers in any UI/ViewModel** and is **bypassed by compound boolean guards in the native app**, upstream reports `[Success] Disable AI: Success`.
 
 ### What to Expect in Morphe-and-Verify
-Users switching to **Morphe-and-Verify** can expect a **frustratingly higher rate of `[⚠️] PARTIAL SUCCESS (MAYBE)` and `[✗] ZERO MUTATIONS (NO)` reports**.
+Users switching to **Morphe-and-Verify** can expect a **frustratingly higher rate of `[PARTIAL SUCCESS (MAYBE)]` and `[ZERO MUTATIONS (NO)]` reports**.
 
 > **These are NOT failures of this fork to apply patches.**  
 > They are an honest, transparent diagnostic revealing that the underlying third-party patches have always been silent placebos. When an ad-blocker fails, you visibly see an ad. When a telemetry patch fails, it fails silently in background threads. **Morphe-and-Verify ends the era of the privacy placebo.**
 
 ---
 
-## 🎯 The Three Verification Pillars
+## The Three Verification Pillars
 
 To eliminate false success reporting, **Morphe-and-Verify** integrates the reverse-engineering toolchain from [MP-Manager](https://github.com/1456319/MP-Manager) (streaming multi-DEX reachability indexing, string-to-method caller tracing, and transport sinkholing) into three mandatory verification pillars:
 
@@ -69,20 +69,20 @@ To eliminate false success reporting, **Morphe-and-Verify** integrates the rever
 
 ---
 
-## 🔬 Empirical Case Study: Xfinity App (`com.xfinity.digitalhome`)
+## Empirical Case Study: Xfinity App (`com.xfinity.digitalhome`)
 
 During audit benchmarks on real target binaries (`stock.apk` vs. `xfinity_base.apk`), our engine exposed why upstream's reports are misleading:
 
 | Patch | Upstream Morphe Report | Morphe-and-Verify Verdict | Verified Reality in Bytecode |
 | :--- | :---: | :---: | :--- |
-| **Block analytics & tracking SDKs** *(Proteus)* | `[✓] Success` | **(NO)** | **0 calls matched, 0 instructions modified.** Standard markers (`com/google/firebase/analytics`) were absent. Completely placebo. |
-| **Block advertising & device IDs** *(Proteus)* | `[✓] Success` | **(NO)** | **0 calls matched, 0 instructions modified.** Getters were not directly queried. |
-| **Disable AI** *(semicoloncolonel)* | `[✓] Success` | **(MAYBE)** | **1 instruction rewritten, 1 legacy caller.** The caller (`DefaultXfinityAssistant.start`) has a compound condition: `!getXfinityAssistantEnabled() && !getCoamActivationEnabled()`. Because `getCoamActivationEnabled()` is `true`, `true && false` evaluates to `false`. **The abort branch never runs; the AI launches unhindered.** |
-| **Block analytics & tracking** *(semicoloncolonel)* | `[✓] Success` | **(MAYBE)** | **Wrapper methods stubbed**, but **73 proprietary Comcast Sift calls** and **23 Comcast AIQ telemetry calls** remain active in bytecode. |
+| **Block analytics & tracking SDKs** *(Proteus)* | `[Success]` | **(NO)** | **0 calls matched, 0 instructions modified.** Standard markers (`com/google/firebase/analytics`) were absent. Completely placebo. |
+| **Block advertising & device IDs** *(Proteus)* | `[Success]` | **(NO)** | **0 calls matched, 0 instructions modified.** Getters were not directly queried. |
+| **Disable AI** *(semicoloncolonel)* | `[Success]` | **(MAYBE)** | **1 instruction rewritten, 1 legacy caller.** The caller (`DefaultXfinityAssistant.start`) has a compound condition: `!getXfinityAssistantEnabled() && !getCoamActivationEnabled()`. Because `getCoamActivationEnabled()` is `true`, `true && false` evaluates to `false`. **The abort branch never runs; the AI launches unhindered.** |
+| **Block analytics & tracking** *(semicoloncolonel)* | `[Success]` | **(MAYBE)** | **Wrapper methods stubbed**, but **73 proprietary Comcast Sift calls** and **23 Comcast AIQ telemetry calls** remain active in bytecode. |
 
 ---
 
-## 🛠️ Features Carried Over from Upstream
+## Features Carried Over from Upstream
 
 Morphe-and-Verify preserves 100% of the operational capabilities of standard Morphe:
 - **Full Compatibility:** Works with existing Morphe and ReVanced patch bundles, custom patch sources, and repositories.
@@ -93,7 +93,7 @@ Morphe-and-Verify preserves 100% of the operational capabilities of standard Mor
 
 ---
 
-## 📄 License & Attribution
+## License & Attribution
 
 - **Morphe-and-Verify** is licensed under the [GNU General Public License v3.0](LICENSE).
 - Based on foundational work by [MorpheApp/morphe-manager](https://github.com/MorpheApp/morphe-manager), [ReVanced](https://github.com/ReVanced/revanced-manager), and [URV](https://github.com/Jman-Github/Universal-ReVanced-Manager).

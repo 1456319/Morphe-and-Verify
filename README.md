@@ -1,5 +1,11 @@
 # Morphe-and-Verify
 
+<p align="center">
+  <a href="https://morphe.software/add-source?github=1456319/Morphe-and-Verify&name=Morphe-and-Verify">
+    <img src="https://img.shields.io/badge/Add%20to%20Morphe-1456319%2FMorphe--and--Verify-0E3F6E?style=for-the-badge&logo=android&logoColor=white" alt="Add to Morphe" />
+  </a>
+</p>
+
 > **Independent Fork Announcement & Non-Association Notice:**  
 > **Morphe-and-Verify** is an independent, community-driven research and hardening fork developed by [@1456319](https://github.com/1456319).  
 > **This project is NOT associated with, affiliated with, sponsored by, or endorsed by the original Morphe developers, MorpheApp organization, or ReVanced team.** All product and registered names remain the property of their respective owners.
@@ -95,18 +101,19 @@ Morphe-and-Verify preserves 100% of the operational capabilities of standard Mor
 
 ## Verified Patch Sources
 
-The following patch repositories are compatible with Morphe-and-Verify and can be added directly via **Sources -> (+)**:
+The following patch repositories are compatible with Morphe-and-Verify and can be added directly via **Sources -> (+)** or using the quick-add links:
 
-| Source | Repository URL | Focus Area | Verification Status |
-| :--- | :--- | :--- | :--- |
-| **Official Morphe Patches** | `github.com/MorpheApp/morphe-patches` | General app patches & ad-blocking | Subjected to 3-pillar verification |
-| **Proteus Patches** | `github.com/ineednotitle/Proteus-Patches` | Extended app features & privacy | Verified with heuristic reporting |
-| **Mobile Stream Patches** | `github.com/semicoloncolonel/mobile-morphe-patches` | Streaming & media patches | Verified with reachability tracing |
+| Source | Repository | Focus Area | One-Tap Add |
+| :--- | :--- | :--- | :---: |
+| **Morphe-and-Verify** | `1456319/Morphe-and-Verify` | Enforces 3-pillar patch verification | [Add to Morphe](https://morphe.software/add-source?github=1456319/Morphe-and-Verify&name=Morphe-and-Verify) |
+| **Official Morphe Patches** | `MorpheApp/morphe-patches` | General app patches & ad-blocking | [Add to Morphe](https://morphe.software/add-source?github=MorpheApp/morphe-patches&name=Morphe%20Patches) |
+| **Proteus Patches** | `ineednotitle/Proteus-Patches` | Extended app features & privacy | [Add to Morphe](https://morphe.software/add-source?github=ineednotitle/Proteus-Patches&name=Proteus%20Patches) |
+| **Mobile Stream Patches** | `semicoloncolonel/mobile-morphe-patches` | Streaming & media patches | [Add to Morphe](https://morphe.software/add-source?github=semicoloncolonel/mobile-morphe-patches&name=Mobile%20Stream%20Patches) |
 
 To add any source in Morphe-and-Verify:
 1. Tap **Sources** on the bottom navigation bar.
 2. Tap the **+** button.
-3. Paste the repository address (e.g. `github.com/ineednotitle/Proteus-Patches`) and tap **Add**.
+3. Paste the repository address (e.g. `github.com/1456319/Morphe-and-Verify`) and tap **Add**.
 
 ---
 

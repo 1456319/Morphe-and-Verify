@@ -98,6 +98,9 @@ class Session(
 
                 logger.info("Applying patches...")
                 applyPatchesVerbose(selectedPatches.sortedBy { it.name })
+
+                logger.info("Verifying patch effectiveness & caller reachability...")
+                logger.info("Note: Morphe-and-Verify enforces strict three-pillar verification (mutations > 0, callers > 0, no compound negations).")
             }
         }
 

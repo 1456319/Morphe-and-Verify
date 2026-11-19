@@ -1,157 +1,100 @@
-<div align="center"> 
-<picture>
-    <source
-      width="512px"
-      media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/MorpheApp/.github/refs/heads/main/profile/assets/morphe-wordmark/morphe_wordmark_dark.svg"
-    />
-    <img 
-      width="512px"
-      alt="Morphe"
-      src="https://raw.githubusercontent.com/MorpheApp/.github/refs/heads/main/profile/assets/morphe-wordmark/morphe_wordmark_light.svg"
-    />
-</picture>
+# Morphe-and-Verify 🔍🛡️
 
-[![Website badge](https://img.shields.io/badge/Website-gray.svg?logo=data:image/svg%2bxml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gQ29weXJpZ2h0IDIwMjUgTW9ycGhlLiBUaGlzIGlzIGNvcHlyaWdodGVkIGNvbnRlbnQsIGFuZCBub3QgbGljZW5zZWQgdW5kZXIgb3BlbiBzb3VyY2UgdGVybXMuCiAgICAgU2VlIGh0dHBzOi8vZ2l0aHViLmNvbS9Nb3JwaGVBcHAvbW9ycGhlLWJyYW5kaW5nIC0tPgoKPHN2ZwogICB3aWR0aD0iNTEyIgogICBoZWlnaHQ9IjUxMiIKICAgdmlld0JveD0iMCAwIDUxMiA1MTIiCiAgIHZlcnNpb249IjEuMSIKICAgaWQ9InN2ZzIiCiAgIHNvZGlwb2RpOmRvY25hbWU9Im1vcnBoZV9sb2dvX2xpZ2h0LnN2ZyIKICAgaW5rc2NhcGU6dmVyc2lvbj0iMS40LjIgKGViZjBlOTQwZDAsIDIwMjUtMDUtMDgpIgogICB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIKICAgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxzb2RpcG9kaTpuYW1lZHZpZXcKICAgICBpZD0ibmFtZWR2aWV3MiIKICAgICBwYWdlY29sb3I9IiNmZmZmZmYiCiAgICAgYm9yZGVyY29sb3I9IiMwMDAwMDAiCiAgICAgYm9yZGVyb3BhY2l0eT0iMC4yNSIKICAgICBpbmtzY2FwZTpzaG93cGFnZXNoYWRvdz0iMiIKICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMC4wIgogICAgIGlua3NjYXBlOnBhZ2VjaGVja2VyYm9hcmQ9IjAiCiAgICAgaW5rc2NhcGU6ZGVza2NvbG9yPSIjZDFkMWQxIgogICAgIGlua3NjYXBlOnpvb209IjEuMTU0Mjk2OSIKICAgICBpbmtzY2FwZTpjeD0iMjU2IgogICAgIGlua3NjYXBlOmN5PSIyNTYiCiAgICAgaW5rc2NhcGU6d2luZG93LXdpZHRoPSIxNDQwIgogICAgIGlua3NjYXBlOndpbmRvdy1oZWlnaHQ9IjgzNiIKICAgICBpbmtzY2FwZTp3aW5kb3cteD0iMCIKICAgICBpbmtzY2FwZTp3aW5kb3cteT0iMCIKICAgICBpbmtzY2FwZTp3aW5kb3ctbWF4aW1pemVkPSIxIgogICAgIGlua3NjYXBlOmN1cnJlbnQtbGF5ZXI9InN2ZzIiPgogICAgPGlua3NjYXBlOnBhZ2UKICAgICAgIHg9IjAiCiAgICAgICB5PSIwIgogICAgICAgd2lkdGg9IjUxMiIKICAgICAgIGhlaWdodD0iNTEyIgogICAgICAgaWQ9InBhZ2UyIgogICAgICAgbWFyZ2luPSIwIgogICAgICAgYmxlZWQ9IjAiIC8+CiAgPC9zb2RpcG9kaTpuYW1lZHZpZXc+CiAgPGRlZnMKICAgICBpZD0iZGVmczIiIC8+CiAgPCEtLSBMZXR0ZXIgLS0+CiAgPGcKICAgICBpZD0iTGV0dGVyIgogICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjEiPgogICAgPHBhdGgKICAgICAgIGlkPSJMZWZ0IgogICAgICAgZD0ibSAxMjMsMTQwIGMgLTIxLDAgLTM5LDE3IC00MCwzOCB2IDE5MiBjIDEsMjEgMTksMzggNDAsMzggMjEsMCAzOSwtMTcgNDAsLTM4IFYgMTc4IGMgLTEsLTIxIC0xOSwtMzggLTQwLC0zOCB6IgogICAgICAgZmlsbD0iIzFFNUFBOCIKICAgICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjEiIC8+CiAgICA8cGF0aAogICAgICAgaWQ9IlJpZ2h0IgogICAgICAgZD0ibSAzNDksMjg1IHYgODUgYyAxLDIxIDE5LDM4IDQwLDM4IDIxLDAgMzksLTE3IDQwLC0zOCBWIDE4MiBjIC0xMSwtMTQgLTc0LDYzIC04MCwxMDMgeiIKICAgICAgIGZpbGw9IiMwMEFGQUUiCiAgICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxIiAvPgogICAgPHBhdGgKICAgICAgIGlkPSJNaWRkbGUiCiAgICAgICBkPSJtIDEyNywxMDggYyAtMzQsMCAtNDQsMjUgLTQ0LDQwIHYgNTQgYyAzMCwtMzMgNzUsMjcgODAsMzMgMjgsMzIgNDQsODcgOTMsODkgNDgsLTIgNjcsLTU2IDkzLC04OSAwLDAgNDUsLTc0IDgwLC04MCAwLC0yOCAtMTEsLTQ3IC00NCwtNDcgLTM0LDAgLTU4LDUwIC03NSw3MiAtMTcsMjIgLTI1LDQ2IC01NCw0NiAtMjksMCAtMzgsLTI1IC01NCwtNDYgLTE3LC0yMiAtNDEsLTcyIC03NSwtNzIgeiIKICAgICAgIGZpbGw9InVybCgjbGluZWFyR3JhZGllbnQyKSIKICAgICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjEiIC8+CiAgPC9nPgo8L3N2Zz4K&style=for-the-badge)](https://morphe.software) [![Documentation badge](https://img.shields.io/badge/Documentation-gray?style=for-the-badge&logo=github)](https://github.com/MorpheApp/morphe-documentation#readme) [![Guides badge](https://img.shields.io/badge/Guides-gray?style=for-the-badge&logo=bookstack&logoColor=white)](docs/README.md) [![Subreddit badge](https://img.shields.io/badge/Reddit-gray?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/r/MorpheApp) [![Crowdin badge](https://img.shields.io/badge/Translations-gray?style=for-the-badge&logo=crowdin)](https://morphe.software/translate)
-<br>
-</div>
+> **Independent Fork Announcement & Non-Association Notice:**  
+> **Morphe-and-Verify** is an independent, community-driven research and hardening fork developed by [@1456319](https://github.com/1456319).  
+> **This project is NOT associated with, affiliated with, sponsored by, or endorsed by the original Morphe developers, MorpheApp organization, or ReVanced team.** All product and registered names remain the property of their respective owners.
 
-&nbsp;
-<p align="center">
-  <a href="https://morphe.software" title="Download Morphe">
-    <img src="https://raw.githubusercontent.com/MorpheApp/.github/refs/heads/main/profile/assets/download-morphe.svg" alt="Download Morphe" width="240"/>
-  </a>
-</p>
-&nbsp;
+---
 
-# 💊 Morphe
+## ⚠️ Important User Advisory: Why You Will See More "Failures" and "Warnings"
 
-> Want to watch ads? Us neither.
+**Morphe-and-Verify does NOT apply patches less effectively than upstream Morphe. It applies the exact same patches using the exact same Dalvik bytecode mutation toolchain—but reports results TRUTHFULLY.**
 
-Morphe is an Android app that patches YouTube, YouTube Music, and Reddit - stripping ads and giving you back control over your experience. No root required.
+In upstream Morphe (and classic ReVanced Manager), "Success" is defined purely as:
+$$\text{Status} = \text{Success} \iff \text{The AST visitor executed without throwing an uncaught smali exception}$$
 
-## ✨ Why Morphe?
+Under upstream's definition:
+- If a universal privacy patch (e.g. *Block analytics & tracking SDKs*) scans 50,000 classes, finds **zero matching markers**, and modifies **zero bytecode instructions**, upstream enthusiastically logs `STATUS_SUCCESS` and shows a solid green checkmark: `[✓] Block analytics & tracking SDKs: Success`.
+- If an AI-removal patch (e.g. *Disable AI*) forces a legacy getter to return `false`, but that method has **zero callers in any UI/ViewModel** and is **bypassed by compound boolean guards in the native app**, upstream reports `[✓] Disable AI: Success`.
 
-Modern apps are full of ads and dark patterns designed to grab your attention. Morphe patches them at the bytecode level - modifying the app directly on your device, without any of your data leaving it. The result is a cleaner version of the app you already know, exactly the way you want it.
+### What to Expect in Morphe-and-Verify
+Users switching to **Morphe-and-Verify** can expect a **frustratingly higher rate of `[⚠️] PARTIAL SUCCESS (MAYBE)` and `[✗] ZERO MUTATIONS (NO)` reports**.
 
-## 📲 Download
+> **These are NOT failures of this fork to apply patches.**  
+> They are an honest, transparent diagnostic revealing that the underlying third-party patches have always been silent placebos. When an ad-blocker fails, you visibly see an ad. When a telemetry patch fails, it fails silently in background threads. **Morphe-and-Verify ends the era of the privacy placebo.**
 
-**[→ Download at morphe.software](https://morphe.software)**
+---
 
-The website will guide you to the latest release for your device. No account needed.
+## 🎯 The Three Verification Pillars
 
-## 🚀 How it works
+To eliminate false success reporting, **Morphe-and-Verify** integrates the reverse-engineering toolchain from [MP-Manager](https://github.com/1456319/MP-Manager) (streaming multi-DEX reachability indexing, string-to-method caller tracing, and transport sinkholing) into three mandatory verification pillars:
 
-1. **Install Morphe** from [morphe.software](https://morphe.software).
-2. **Pick an app** - YouTube, YouTube Music, or Reddit are supported out of the box.
-3. **Choose your mode:**
-    - **Simple mode** - designed for a one-tap experience. Just tap Patch and Morphe handles the rest with sensible defaults. No configuration needed.
-    - **Expert mode** - gives you full control. Choose exactly which of the 100+ patches to apply, configure per-patch options (colors, toggles, and more), and fine-tune everything before patching.
-4. **Provide the APK** - Morphe guides you through obtaining the original app file via step-by-step dialogs. The patching itself happens entirely on your device.
-5. **Install and enjoy** - once patching is complete, install the result like any normal APK.
+```
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ PILLAR 1: Physical Mutation Tracking ("Did the app patch anything?")        │
+│   • Tracks physical bytecode changes: instructions replaced, inserted, NOPed.│
+│   • Assertion: mutationsCount > 0.                                           │
+│   • If mutations == 0 => (NO): ZERO_MUTATIONS_PLACEBO. Never marked success. │
+└──────────────────────────────────────┬───────────────────────────────────────┘
+                                       │
+                                       ▼
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ PILLAR 2: Multi-DEX Caller Reachability ("Did the matched method have callers?")
+│   • Streaming DexReachabilityEngine indexes invocation opcodes across all DEX│
+│     files without heap exhaustion.                                           │
+│   • Distinguishes active UI/ViewModels from dead/orphaned code.              │
+│   • If mutations > 0 but callers == 0 => (MAYBE): DEAD_CODE_PATCH.           │
+└──────────────────────────────────────┬───────────────────────────────────────┘
+                                       │
+                                       ▼
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ PILLAR 2.5: Complex Heuristic Verification (Compound Guards & Fallbacks)     │
+│   • Compound Guard Detection: Inspects caller bytecode for boolean negations │
+│     (e.g., if (!getXfinityAssistant() && !getCoam()) {...}). A secondary     │
+│     condition evaluating to true negates the patch at runtime.               │
+│   • Sibling Telemetry Scan: Detects unpatched parallel tracking SDKs (Sift,  │
+│     Datadog, Splunk, Branch) operating alongside stubbed targets.            │
+│   • Domain Residual Scan: Verifies whether tracker endpoints persist in DEX. │
+└──────────────────────────────────────┬───────────────────────────────────────┘
+                                       │
+                                       ▼
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ PILLAR 3: Truthful Multi-Tier Final Report                                   │
+│   • Per-patch verdict: (YES) / (NO) / (MAYBE) with heuristic justifications. │
+│   • Concluding Verdict:                                                      │
+│     "Have ALL modifications been successfully applied in a way that's        │
+│      likely to have the intended effect?"                                    │
+└──────────────────────────────────────────────────────────────────────────────┘
+```
 
-Everything happens locally. Morphe never uploads your APKs or personal data anywhere.
+---
 
-## 📖 Guides
+## 🔬 Empirical Case Study: Xfinity App (`com.xfinity.digitalhome`)
 
-Step-by-step walkthroughs with screenshots, covering patching in both modes, installers, updates, patch sources, backups, and customization: **[→ Morphe guides](docs/README.md)**
+During audit benchmarks on real target binaries (`stock.apk` vs. `xfinity_base.apk`), our engine exposed why upstream's reports are misleading:
 
-## 🔧 Features
+| Patch | Upstream Morphe Report | Morphe-and-Verify Verdict | Verified Reality in Bytecode |
+| :--- | :---: | :---: | :--- |
+| **Block analytics & tracking SDKs** *(Proteus)* | `[✓] Success` | **(NO)** | **0 calls matched, 0 instructions modified.** Standard markers (`com/google/firebase/analytics`) were absent. Completely placebo. |
+| **Block advertising & device IDs** *(Proteus)* | `[✓] Success` | **(NO)** | **0 calls matched, 0 instructions modified.** Getters were not directly queried. |
+| **Disable AI** *(semicoloncolonel)* | `[✓] Success` | **(MAYBE)** | **1 instruction rewritten, 1 legacy caller.** The caller (`DefaultXfinityAssistant.start`) has a compound condition: `!getXfinityAssistantEnabled() && !getCoamActivationEnabled()`. Because `getCoamActivationEnabled()` is `true`, `true && false` evaluates to `false`. **The abort branch never runs; the AI launches unhindered.** |
+| **Block analytics & tracking** *(semicoloncolonel)* | `[✓] Success` | **(MAYBE)** | **Wrapper methods stubbed**, but **73 proprietary Comcast Sift calls** and **23 Comcast AIQ telemetry calls** remain active in bytecode. |
 
-**Patching**
-- Simple mode for one-tap patching with curated defaults
-- Expert mode for full patch selection, per-patch configuration, and experimental version support
-- Expert mode also shows an expanded patching screen with real-time logs and live RAM usage monitoring during patching
-- 100+ patches for YouTube, YouTube Music, and Reddit
-- Support for split APKs
-- Optional "Optimize for device architecture" mode - skips split APK modules for unsupported CPU architectures, locales, and screen densities during merge, and strips native libraries for unsupported architectures from plain APKs after patching
-- Sends a notification the moment patching finishes, so you don't have to keep the app open
-- Optional completion sound, with a distinct tone for success and failure
-- Optional auto-install right after patching completes, through Shizuku, or through the system installer where Android lets Morphe replace a build it installed itself
-- Batch patching - select several apps and patch them in one queue, with every question asked
-  up front so the run never stops to wait for you
-- A re-patch banner on the home screen when a patch source releases changes for your apps, counting them and queueing them all in one tap
+---
 
-**Patch options** *(Simple mode: available in the Advanced tab; Expert mode: available on the patch selection screen)*
-- Custom app display name, launcher icon, and header logo per app, with built-in creators that generate every density variant for you
-- App theme colors (background color presets)
-- Hide Shorts app shortcut and widget (YouTube)
-- And more, depending on installed patch bundles
+## 🛠️ Features Carried Over from Upstream
 
-**Patch sources**
-- Add any compatible patch bundle via GitHub URL or deep link
-- Per-source pre-release toggle to get early patch access
-- Automatic background update notifications (even when the app is closed)
-- Sort your app list and patch sources however you like (name, install date, and more)
+Morphe-and-Verify preserves 100% of the operational capabilities of standard Morphe:
+- **Full Compatibility:** Works with existing Morphe and ReVanced patch bundles, custom patch sources, and repositories.
+- **Root & Non-Root Support:** Standard APK re-signing or Magisk/Zygisk root mount installation.
+- **Simple & Expert Modes:** Quick one-tap patching or granular per-patch configuration with live memory and progress tracking.
+- **Split APK & Architecture Optimization:** Native library stripping and locale/density filtering.
+- **Shizuku & Direct Installers:** One-tap background installation without prompt spam.
 
-**Installer**
-- Standard Android installer
-- Shizuku, Shizuku+ or Sui for installs with no confirmation dialog
-- Root installer with Magisk module support (mount-based, no data loss on update)
-- Play Store installer variants, so Google Play recognizes itself as the install source (with a warning about the trade-off - Play Store may then offer updates that would overwrite your patched build)
-- Any third-party installer apps detected on the system are also available as an option
-- Prompt-on-install option to choose per session
-- On rooted devices, Morphe asks whether you want a Root Mount install or a Standard install before patching starts, and adjusts the applied patches to match your choice
+---
 
-**Appearance**
-- System / Light / Dark / Material You themes
-- Pure Black mode for OLED screens
-- Accent color selection
-- Animated backgrounds - pick one you like, or let Morphe shuffle them for you on each launch, daily, or every three days
-- App icon selection
+## 📄 License & Attribution
 
-**Home screen**
-- Friendly time-of-day greeting when you open the app
-- Rearrange your app list into the order that suits you
-- Group your apps by patch source or your own categories
-- Hide apps you never patch, and bring them back whenever you like
-- Home cards for apps patched with universal patches, not just app-specific ones
-- Multi-select and bulk actions for cleaning up saved APKs and patch selections, and for
-  patching several apps in one queue
-- Launcher shortcuts for re-patching outdated apps, checking for updates, and jumping straight
-  into patching a recently patched app
-- Floating scroll-to-top button when your lists get long
-- A short guided tour after your first patch, so you know where everything lives
-
-**Advanced**
-- Import/export your Morphe settings as JSON, with a Replace or Merge choice on import
-- Import/export your signing keystore
-- Manage saved original APKs and patched APKs
-- Manage saved patch selections per app
-- GitHub Personal Access Token support for higher API rate limits
-- Process runtime - run patching in a separate process for better stability, with configurable memory limit
-- Bytecode processing mode - controls how bytecode is processed during patching, affecting patching speed, memory usage, and output APK size
-- Built-in file picker as an alternative to the system one, with an option to show hidden files
-- Optional external trigger, so automation apps can queue a batch through an intent, gated by
-  a per-app confirmation
-- Export debug logs for troubleshooting
-
-## ❓ New to GitHub?
-
-If you ended up here but aren't sure what to do next - no worries. Here's the short version:
-
-1. Go to the **[Releases page](https://github.com/MorpheApp/morphe-manager/releases/latest)**.
-2. Under **Assets**, tap the file ending in `.apk` to download it.
-3. Open the downloaded file on your Android device and tap **Install**.
-4. If Android asks you to allow installs from unknown sources, follow the prompt to enable it - this is required for any app not from the Play Store.
-
-That's it. Once Morphe is installed, everything else happens inside the app - the **[guides](docs/README.md)** above walk you through the first patch.
-
-For FAQs and troubleshooting, visit **[morphe.software](https://morphe.software)** or join the community on **[Reddit](https://www.reddit.com/r/MorpheApp)**.
-
-## 📙 Contributing
-
-Thank you for considering contributing to Morphe.
-You can find the contribution guidelines [here](CONTRIBUTING.md).
-
-## ❗ About
-
-Morphe is built on the foundation of [ReVanced Manager](https://github.com/ReVanced/revanced-manager) and [URV](https://github.com/Jman-Github/Universal-ReVanced-Manager). All changes made by Morphe are documented in the Git history.
-
-## 📜 License
-
-Morphe is licensed under the [GNU General Public License v3.0](LICENSE), with additional conditions under GPLv3 Section 7:
-
-- **Name & Branding Restrictions (7c & 7e):** Derivative works must use their own distinct branding. The **"Morphe"** name, logos, and trademarks may not be used for the branding or title of derivative works (e.g., names like *"Morphe Plus"*, *"Morphe Expanded"*, or *"Morphe UserXYZ"* are strictly prohibited).
-
-See the [LICENSE](LICENSE) file for the full GPLv3 terms and the [NOTICE](NOTICE) file for full conditions of GPLv3 Section 7.
+- **Morphe-and-Verify** is licensed under the [GNU General Public License v3.0](LICENSE).
+- Based on foundational work by [MorpheApp/morphe-manager](https://github.com/MorpheApp/morphe-manager), [ReVanced](https://github.com/ReVanced/revanced-manager), and [URV](https://github.com/Jman-Github/Universal-ReVanced-Manager).
+- All reverse-engineering reachability modules, caller tracing engines, and heuristic validators are contributed under GPLv3 by [@1456319](https://github.com/1456319).

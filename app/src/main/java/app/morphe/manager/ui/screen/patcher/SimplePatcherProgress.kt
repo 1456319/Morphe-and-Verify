@@ -49,6 +49,9 @@ fun SimplePatchingInProgress(
     packageName: String? = null,
     showLongStepWarning: Boolean = false,
     queueHeader: (@Composable () -> Unit)? = null,
+    patcherSucceeded: Boolean? = null,
+    resultButton: ResultButton = ResultButton.Install,
+    onResultClick: () -> Unit = {},
     onCancelClick: () -> Unit
 ) {
     val windowSize = rememberWindowSize()
@@ -93,6 +96,9 @@ fun SimplePatchingInProgress(
                 showLongStepWarning = showLongStepWarning,
                 patchProgress = patchProgress,
                 queueHeader = queueHeader,
+                patcherSucceeded = patcherSucceeded,
+                resultButton = resultButton,
+                onResultClick = onResultClick,
                 onCancelClick = onCancelClick
             )
         }
@@ -100,8 +106,11 @@ fun SimplePatchingInProgress(
         // Bottom action bar
         if (!isLandscape()) {
             PatcherBottomActionBar(
+                showCancelButton = patcherSucceeded == null,
                 showHomeButton = false,
-                onCancelClick = onCancelClick
+                resultButton = resultButton.takeIf { patcherSucceeded == true },
+                onCancelClick = onCancelClick,
+                onResultClick = onResultClick
             )
         }
     }
@@ -121,6 +130,9 @@ private fun AdaptiveProgressContent(
     showLongStepWarning: Boolean,
     patchProgress: PatchProgressSource,
     queueHeader: (@Composable () -> Unit)? = null,
+    patcherSucceeded: Boolean? = null,
+    resultButton: ResultButton = ResultButton.Install,
+    onResultClick: () -> Unit = {},
     onCancelClick: () -> Unit
 ) {
     val contentPadding = windowSize.contentPadding
@@ -162,8 +174,11 @@ private fun AdaptiveProgressContent(
                 // Action bar
                 PatcherBottomActionBar(
                     horizontalPadding = 0.dp,
+                    showCancelButton = patcherSucceeded == null,
                     showHomeButton = false,
-                    onCancelClick = onCancelClick
+                    resultButton = resultButton.takeIf { patcherSucceeded == true },
+                    onCancelClick = onCancelClick,
+                    onResultClick = onResultClick
                 )
             }
 

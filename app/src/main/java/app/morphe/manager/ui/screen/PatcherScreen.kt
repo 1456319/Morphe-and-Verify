@@ -514,6 +514,9 @@ private fun PatcherScreenContent(
                             patchProgress = patcherViewModel.patchRun,
                             packageName = patcherViewModel.packageName,
                             showLongStepWarning = showLongStepWarning,
+                            patcherSucceeded = patcherSucceeded,
+                            resultButton = resultButton(shownInstallState, installedPackageName, usingMountInstall),
+                            onResultClick = { patcherViewModel.showSuccess() },
                             onCancelClick = { showCancelDialog = true }
                         )
                     }

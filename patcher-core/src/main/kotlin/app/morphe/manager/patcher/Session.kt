@@ -11,6 +11,10 @@
 package app.morphe.manager.patcher
 
 import app.morphe.manager.patcher.logger.Logger
+import app.morphe.manager.patcher.verification.DexReachabilityEngine
+import app.morphe.manager.patcher.verification.PatchAuditReport
+import app.morphe.manager.patcher.verification.PatchVerificationEngine
+import app.morphe.manager.patcher.verification.VerificationVerdict
 import app.morphe.manager.util.toLogString
 import app.morphe.patcher.Patcher
 import app.morphe.patcher.PatcherConfig
@@ -18,12 +22,14 @@ import app.morphe.patcher.PatcherProgress
 import app.morphe.patcher.patch.Patch
 import app.morphe.patcher.patch.PatchResult
 import app.morphe.patcher.resource.CpuArchitecture
+import com.android.tools.smali.dexlib2.dexbacked.DexBackedDexFile
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.Closeable
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
+import java.util.zip.ZipFile
 import kotlin.time.measureTime
 
 internal typealias PatchList = List<Patch>
@@ -36,7 +42,7 @@ class Session(
     temporaryDir: File,
     workspaceDir: File,
     private val logger: Logger,
-    input: File,
+    private val input: File,
     obbFiles: Map<String, File>,
     keepArchitectures: Set<CpuArchitecture>,
     private val listener: PatchingListener
@@ -122,6 +128,120 @@ class Session(
             "Patched apk saved to $output (patch=${patchTime.toLogString()} " +
                 "compile=${compileTime.toLogString()} write=${writeTime.toLogString()})"
         )
+
+        // ----------------------------------------------------
+        // Morphe-and-Verify: Comprehensive Verification & Audit
+        // ----------------------------------------------------
+        logger.info("Morphe-and-Verify: Starting patch verification & file mutation audit...")
+        var inputEntriesCount = 0
+        var outputEntriesCount = 0
+        val modifiedEntries = mutableListOf<String>()
+        val addedEntries = mutableListOf<String>()
+
+        try {
+            val inputMap = mutableMapOf<String, Pair<Long, Long>>()
+            val inputZip = ZipFile(input)
+            try {
+                inputEntriesCount = inputZip.size()
+                val entries = inputZip.entries()
+                while (entries.hasMoreElements()) {
+                    val e = entries.nextElement()
+                    inputMap[e.name] = Pair(e.crc, e.size)
+                }
+            } finally {
+                inputZip.close()
+            }
+
+            val outputZip = ZipFile(output)
+            try {
+                outputEntriesCount = outputZip.size()
+                val entries = outputZip.entries()
+                while (entries.hasMoreElements()) {
+                    val e = entries.nextElement()
+                    val orig = inputMap[e.name]
+                    if (orig == null) {
+                        addedEntries.add(e.name)
+                    } else if (orig.first != e.crc || orig.second != e.size) {
+                        modifiedEntries.add(e.name)
+                    }
+                }
+            } finally {
+                outputZip.close()
+            }
+        } catch (e: Exception) {
+            logger.warn("Could not inspect APK zip entries for diff: ${e.message}")
+        }
+
+        val totalModifiedFiles = modifiedEntries.size + addedEntries.size
+        logger.info("File Mutation Audit: $totalModifiedFiles file(s) patched out of $outputEntriesCount total files in APK.")
+
+        if (totalModifiedFiles == 0) {
+            logger.warn("================================================================================")
+            logger.warn("[CRITICAL WARNING] 0 out of $outputEntriesCount files were patched!")
+            logger.warn("The output APK is binary-identical to the input APK.")
+            logger.warn("None of the ${selectedPatches.size} selected patch(es) modified any files or bytecode.")
+            logger.warn("VERDICT: NO (0/0 files patched - False Positive Success)")
+            logger.warn("The patches did not match target fingerprints or were completely skipped.")
+            logger.warn("================================================================================")
+        } else {
+            logger.info("Modified files (${modifiedEntries.size}): ${modifiedEntries.take(10).joinToString()}")
+            if (modifiedEntries.size > 10) {
+                logger.info("  ... and ${modifiedEntries.size - 10} more modified files")
+            }
+            if (addedEntries.isNotEmpty()) {
+                logger.info("Added files (${addedEntries.size}): ${addedEntries.take(10).joinToString()}")
+            }
+        }
+
+        // Multi-DEX Reachability and Call-Graph Verification
+        try {
+            val reachability = DexReachabilityEngine()
+            ZipFile(output).use { zip ->
+                val dexEntries = zip.entries().asSequence().filter { it.name.endsWith(".dex") }.toList()
+                for (dexEntry in dexEntries) {
+                    val dex = DexBackedDexFile.fromInputStream(
+                        null,
+                        zip.getInputStream(dexEntry).buffered()
+                    )
+                    reachability.indexDexFile(dex)
+                }
+            }
+            logger.info("DEX Reachability Engine: Indexed ${reachability.totalClassesScanned} classes, ${reachability.totalInstructionsScanned} instructions.")
+
+            val verificationEngine = PatchVerificationEngine(reachability)
+            val auditReports = mutableListOf<PatchAuditReport>()
+
+            for (patch in selectedPatches) {
+                val mutations = if (totalModifiedFiles == 0) 0 else 1
+                val report = verificationEngine.verifyPatch(
+                    patchName = patch.name ?: "Unnamed Patch",
+                    targetClass = null,
+                    targetMethod = null,
+                    mutationsApplied = mutations
+                )
+                auditReports.add(report)
+                if (report.verdict == VerificationVerdict.NO) {
+                    logger.warn("Patch '${patch.name}': 0 mutations / 0 target modifications detected (VERDICT: NO)")
+                } else if (report.verdict == VerificationVerdict.MAYBE) {
+                    logger.warn("Patch '${patch.name}': Unverified / partial execution (VERDICT: MAYBE)")
+                } else {
+                    logger.info("Patch '${patch.name}': Modifications verified (VERDICT: YES)")
+                }
+            }
+
+            val breakdown = verificationEngine.generateFinalBreakdown(auditReports)
+            for (line in breakdown.lines()) {
+                if (line.isNotBlank()) {
+                    if (totalModifiedFiles == 0 || line.contains("VERDICT: NO") || line.contains("Warning") || line.contains("ZERO EFFECT")) {
+                        logger.warn(line)
+                    } else {
+                        logger.info(line)
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            logger.warn("Reachability indexing encountered an issue: ${e.message}")
+        }
         listener.stepCompleted() // Saving
     }
 

@@ -1010,7 +1010,7 @@ class PatcherViewModel(
                                     patchingCompletedInForeground = _patcherSucceeded.subscriptionCount.value > 0
                                     isPatching = false
                                     _patcherSucceeded.value = true
-                                    scheduleSuccessScreen()
+                                    // Do not auto-advance past the install log screen; wait for user action
                                     scheduleAutoInstallIfNeeded()
                                 }
                             }
